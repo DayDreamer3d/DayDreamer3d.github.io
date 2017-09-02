@@ -1,0 +1,159 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Service Architecture &#8212; Nameko And RabbitMQ 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Service In Action" href="service_in_action.html" />
+    <link rel="prev" title="Nameko Microservices And RabbitMQ" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="service-architecture">
+<h1>Service Architecture<a class="headerlink" href="#service-architecture" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial we will look at the Nameko service architecture.</p>
+<img alt="Nameko service architecture" src="_images/service-architecture.png" />
+<p>Let’s learn about the architecture in parts. We will go inside-out.</p>
+<div class="section" id="service-method">
+<h2>Service Method<a class="headerlink" href="#service-method" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>It is the unit which contains the application logic and does the real work when gets invoked.
+Is the regular class method decorated with entrypoint.</div></blockquote>
+</div>
+<div class="section" id="entrypoint">
+<h2>Entrypoint<a class="headerlink" href="#entrypoint" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>It act as a gatway to outside world for a service method. It controls any interaction of method with other
+foreign entities.</div></blockquote>
+</div>
+<div class="section" id="service-class-worker">
+<h2>Service Class / Worker<a class="headerlink" href="#service-class-worker" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>It the class that encapsulates all the application as methods, some are exposed through entrypoint
+as <cite>service methods</cite> others are helper methods.
+Worker is as an instance of service class, it is created when an entrypoint is fired.</div></blockquote>
+</div>
+<div class="section" id="service-dependency">
+<h2>Service Dependency<a class="headerlink" href="#service-dependency" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Many times a service is dependent on other services, these services act as dependencies which
+resides in separate space than the invoked service.</div></blockquote>
+</div>
+<div class="section" id="extensions">
+<h2>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Any piece of code outside of application logic considered as an extension
+e.g. entrypoint and service dependency.</div></blockquote>
+</div>
+<div class="section" id="service-container">
+<h2>Service Container<a class="headerlink" href="#service-container" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Is an encapsulation of a single service class with all of its extensions.</div></blockquote>
+</div>
+<div class="section" id="service-runner">
+<h2>Service Runner<a class="headerlink" href="#service-runner" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Is a thin wrapper around single or multiple service containers. It run these container simultaneously.</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Nameko And RabbitMQ</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Service Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_in_action.html">Service In Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chained_services.html">Chained Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_entrypoint.html">Http Entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_app.html">Demo App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional_resources.html">Additional Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Nameko Microservices And RabbitMQ</a></li>
+      <li>Next: <a href="service_in_action.html" title="next chapter">Service In Action</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Anurag Bisht (day.dreamer.web@gmail.com).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/service_architecture.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

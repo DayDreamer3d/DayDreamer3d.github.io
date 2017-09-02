@@ -1,0 +1,166 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Http Entrypoint &#8212; Nameko And RabbitMQ 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Events" href="events.html" />
+    <link rel="prev" title="Chained Services" href="chained_services.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="http-entrypoint">
+<h1>Http Entrypoint<a class="headerlink" href="#http-entrypoint" title="Permalink to this headline">¶</a></h1>
+<p>Until now, we were working with <strong>rpc with amqp</strong> which uses rpc as an entrypoint to the service method.
+We will change that  pattern and will use <strong>http</strong> entrypoint this time.</p>
+<div class="section" id="service-code">
+<h2>Service Code<a class="headerlink" href="#service-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># http_service.py</span>
+
+<span class="kn">from</span> <span class="nn">nameko.web</span> <span class="kn">import</span> <span class="n">handlers</span>
+
+<span class="k">class</span> <span class="nc">HttpService</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;http_service&#39;</span>
+
+<span class="hll">    <span class="nd">@handlers.http</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</span>    <span class="k">def</span> <span class="nf">get_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;index&#39;</span>
+
+<span class="hll">    <span class="nd">@handlers.http</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;/post&#39;</span><span class="p">)</span>
+</span>    <span class="k">def</span> <span class="nf">post_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">request</span><span class="o">.</span><span class="n">get_data</span><span class="p">(</span><span class="n">as_text</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<div class="line-block">
+<div class="line">line-1: imports <code class="docutils literal"><span class="pre">handlers</span></code> from web which contains <code class="docutils literal"><span class="pre">http</span></code> entrypoint.</div>
+<div class="line">line-3: Defines the service class.</div>
+<div class="line">line-4: declares the name of the service</div>
+<div class="line">line-6: defines <code class="docutils literal"><span class="pre">http</span></code> entrypoint with suitable http method and path.</div>
+<div class="line">line-7: service method to do real task.</div>
+</div>
+</div>
+<div class="section" id="working">
+<h2>Working<a class="headerlink" href="#working" title="Permalink to this headline">¶</a></h2>
+<p>Working of http entrypoint is much simpler.</p>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">nameko</span> <span class="pre">run</span></code> the service code. It will start a process at port <code class="docutils literal"><span class="pre">8000</span></code>.</li>
+<li>use <code class="docutils literal"><span class="pre">curl</span> <span class="pre">-i</span> <span class="pre">localhost:8000/</span></code> to send a http request.</li>
+<li>This service being a <code class="docutils literal"><span class="pre">GET</span></code> request, <code class="docutils literal"><span class="pre">get_method</span></code> will process this request.</li>
+<li>It will send <code class="docutils literal"><span class="pre">'index'</span></code> string as response with other http headers.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Nameko And RabbitMQ</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="service_architecture.html">Service Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_in_action.html">Service In Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chained_services.html">Chained Services</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Http Entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_app.html">Demo App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional_resources.html">Additional Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="chained_services.html" title="previous chapter">Chained Services</a></li>
+      <li>Next: <a href="events.html" title="next chapter">Events</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Anurag Bisht (day.dreamer.web@gmail.com).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/http_entrypoint.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
