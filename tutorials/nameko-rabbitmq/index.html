@@ -1,0 +1,157 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Nameko Microservices And RabbitMQ &#8212; Nameko And RabbitMQ 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Service Architecture" href="service_architecture.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="nameko-microservices-and-rabbitmq">
+<h1>Nameko Microservices And RabbitMQ<a class="headerlink" href="#nameko-microservices-and-rabbitmq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Hey there! In this series we will try to visualise <a class="reference external" href="https://martinfowler.com/articles/microservices.html">microservices</a> done with <a class="reference external" href="https://github.com/nameko/nameko">Nameko</a> and <a class="reference external" href="https://www.rabbitmq.com">RabbitMQ</a>.</p>
+<p>Why we should know about RabbitMQ?
+It’s a transport layer over which Nameko micorservices run.
+It could be possible at high level services are running fine but at transport level things are failing.
+We should be able to troubleshoot and fix the issues that’s only possible if we know how services are working with it.</p>
+<p>In this series,
+We will look at service implementation in Nameko and RabbitMQ.
+We will also learn about handling of http traffic and events and
+finally we will create a tiny app with Nameko and see all of these components in action.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This tutorial assumes reader has understanding of RabbitMQ and microservices in general.</p>
+</div>
+</div>
+<div class="section" id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="docutils">
+<dt><a class="reference internal" href="service_architecture.html"><span class="doc">Service Architecture</span></a></dt>
+<dd>We will see an overview of the architecture of Nameko microservices.
+It includes <em>service class, service method, entrypoint etc.</em></dd>
+<dt><a class="reference internal" href="service_in_action.html"><span class="doc">Service In Action</span></a></dt>
+<dd>Here we will have a simplest setup possible where we will test
+a single service connected to a client over <em>rpc entrypoint</em>.</dd>
+<dt><a class="reference internal" href="chained_services.html"><span class="doc">Chained Services</span></a></dt>
+<dd>In this section we will reason how a chained services work
+where one service is dependent on other.</dd>
+<dt><a class="reference internal" href="http_entrypoint.html"><span class="doc">Http Entrypoint</span></a></dt>
+<dd>In this part we will see the working of <em>http entrypoint</em>.</dd>
+<dt><a class="reference internal" href="events.html"><span class="doc">Events</span></a></dt>
+<dd>We will look at event driven <a class="reference external" href="https://en.wikipedia.org/wiki/Publish-subscribe_pattern">pub sub</a> pattern.</dd>
+<dt><a class="reference internal" href="demo_app.html"><span class="doc">Demo App</span></a></dt>
+<dd>In this tutorial we will build a demo app with above functionalities.</dd>
+<dt><a class="reference internal" href="additional_resources.html"><span class="doc">Additional Resources</span></a></dt>
+<dd>This page provides additional resources for further learning.</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>Please feel free to provide your feedback at <em>day.dreamer.web&#64;gmail.com</em>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Nameko And RabbitMQ</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="service_architecture.html">Service Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_in_action.html">Service In Action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chained_services.html">Chained Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_entrypoint.html">Http Entrypoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo_app.html">Demo App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="additional_resources.html">Additional Resources</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="service_architecture.html" title="next chapter">Service Architecture</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Anurag Bisht (day.dreamer.web@gmail.com).
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
