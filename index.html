@@ -1,1 +1,498 @@
-"Hello World !" 
+<!-- use section tag -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Anurag Bisht | Software Developer</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" type="text/css" href="static/css/material.css">
+    <link rel="stylesheet" type="text/css" href="static/css/app.css">
+</head>
+
+<body>
+
+<div>
+    <header class="row">
+        <div class="col-4">
+            <img class="row level-8" src="./static/images/profile.jpg" alt="Anurag Bisht Picture">
+            <div class="row">
+                <a href="https://www.linkedin.com/in/day-dreamer/">
+                    <div class="col-4">
+                    <i id="linkedin" class="row icon-social-linkedin"></i>
+                    </div>
+                </a>
+                <a href="https://github.com/DayDreamer3d/">
+                    <div class="col-4">
+                    <i id="github" class="row icon-social-github"></i>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/DayDreamer1908/">
+                    <div class="col-4">
+                    <i id="facebook" class="row icon-social-facebook"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="title-container" class="col-8">
+            <div class="row level-8">
+                <h1 class="row">Anurag Bisht</h1>
+                <h2>Software Developer</h2>
+            </div>
+            <div class="row">
+                <p>
+                    From past six years I've worked in different development roles
+                    in vfx industry. Lately developed services and managed internal PaaS.
+                    <br>
+                    When I get time I enjoy playing football and trekking.
+                </p>
+                <p>"Be skeptical, but learn to listen" - Don Muigel Ruiz</p>
+            </div>
+        </div>
+        <div>
+            <div id="fab" class="level-10 click">
+                <i class="icon-bubbles"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="main-container" class="row level-1">
+            <div class="col-6">
+                <div class="level-2 card click">
+                    <h3>Experience</h3>
+                    <div class="row contract">
+                        <div class="col-6">
+                            <canvas id="exp_pie" class="row">
+                            </canvas>
+                        </div>
+                        <div id="summary-text" class="col-6">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p class="medium">3</p>
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="summary-title">MPC</p>
+                                        <p class="summary-info">Software Developer</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p class="medium">1</p>
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="summary-title">Xentrix</p>
+                                        <p class="summary-info">Pipeline Developer</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p class="medium">2</p>
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="summary-title">Prana</p>
+                                        <p class="summary-info">Pipeline TD</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row expand">
+                        <div class="col-2">
+                            <p class="details-title">MPC</p>
+                            <p class="summary-info">Vfx Studio</p> 
+                        </div>
+                        <div class="col-10 details">
+                            <p class="details-title">Software Developer</p>
+                            <p class="summary-info">Core Engineering Team</p>
+                            <p class="summary-info">Feb 2014 - Mar 2017</p>
+                            <br>
+                            <p class="details-sub-title">Managing Internal Cloud (Amanda)</p>
+                            <p class="details-text">
+                                We have monitoring and logging system made up of logstash and grayLog respectively, backed up by elasticSearch.
+                                Monitoring system provides the good indication about the health of the system. For deep dives I prefer checking the state of traffic over messaging queue rabbitMQ dashboard. We use saltStack for configuration management of our services and components of the system and circus for process management. 
+                            </p>
+                            <div class="row">
+                                <div class="tag summary-info">Python</div>
+                                <div class="tag summary-info">PaaS</div>
+                                <div class="tag summary-info">ELK</div>
+                                <div class="tag summary-info">Graylog</div>
+                                <div class="tag summary-info">RabbitMQ</div>
+                                <div class="tag summary-info">Saltstack</div>
+                            </div>
+                            <br>
+                            <p class="details-sub-title">Hosted Services Development</p>
+                            <div class="row details-text">
+                                <div class="col-2">
+                                    <p>SyncQueue –</p>
+                                </div>
+                                <div class="col-10">
+                                    <p>project responsible for syncing data across all the sites. It’s a queue system
+                                        based on priority queue. It’s api is hosted as a service on the cloud.</p>
+                                </div>
+                                <div class="col-2">
+                                    <p>Notification –</p>
+                                </div>
+                                <div class="col-10">
+                                    <p>Notifies subscribed clients post happening of an event. It is based on publish
+                                    subscribe model. Actions are generated from events, one of the actions being generation of rss message which would notify the clients.
+                                    </p>
+                                </div>
+                                <div class="col-2">
+                                    <p>Asset Filtering –</p>
+                                </div>
+                                <div class="col-10">
+                                    <p>
+                                        service responsible for calculating asset dependencies. Improved the calculation of dependencies by ~ 30 percent by using lazy loading, python generators.
+                                    </p>
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="tag summary-info">Python</div>
+                                <div class="tag summary-info">Microservices</div>
+                                <div class="tag summary-info">Pub-sub</div>
+                                <div class="tag summary-info">Queue</div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <p class="details-title">Xentrix</p>
+                            <p class="summary-info">Animation Studio</p> 
+                        </div>
+                        <div class="col-10 details">
+                            <p class="details-title">Pipeline Developer</p>
+                            <p class="summary-info">Pipeline Team</p>
+                            <p class="summary-info">Sep 2012 - Feb 2014</p>
+                            <br>
+                            <p class="details-sub-title">Standalone Tools</p>
+                            <div class="row details-text">
+                                <div class="col-2">
+                                    <p>Lineup Tool –</p>
+                                </div>
+                                <div class="col-10">
+                                    <p>Creates episode lineup. Fetches the latest clips from database, creates layout and sequence using avisynth, parallelise the process using threading. Overall, the process completed in 5-6 minutes which was taking an hour before.   
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="tag summary-info">Python</div>
+                                <div class="tag summary-info">Avisynth</div>
+                                <div class="tag summary-info">Threading</div>
+                                <div class="tag summary-info">PyQt</div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <p class="details-title">Prana</p>
+                            <p class="summary-info">Animation Studio</p> 
+                        </div>
+                        <div class="col-10 details">
+                            <p class="details-title">Pipeline TD</p>
+                            <p class="summary-info">Technology Team</p>
+                            <p class="summary-info">Nov 2010 - Aug 2012</p>
+                            <br>
+                            <p class="details-sub-title">Development</p>
+                            <div class="row details-text">
+                                <p>Created various scripts for the projects and artists.
+                                </p>
+                            </div>
+                            <div class="row">
+                                <div class="tag summary-info">Python</div>
+                                <div class="tag summary-info">PyQt</div>
+                                <div class="tag summary-info">Maya</div>
+                            </div>
+                        </div>
+                        <a class="button" href="https://www.linkedin.com/in/day-dreamer/">MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="level-2 card click">
+                    <h3>Tutorials</h3>
+                    <div class="row contract">
+                        <div class="col-6">
+                            <canvas id="exp_pie" class="row">
+                            </canvas>
+                        </div>
+                        <div id="summary-text" class="col-6">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p class="medium">2</p>
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="summary-title">Micorservices</p>
+                                        <p class="summary-info">Nameko | RabbitMQ</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p class="medium">1</p>
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="summary-title">Video Layout</p>
+                                        <p class="summary-info">Avisynth</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <p class="medium">1</p>
+                                    </div>
+                                    <div class="col-10">
+                                        <p class="summary-title">Non-linear Squash</p>
+                                        <p class="summary-info">Rigging | Maya</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tutorials" class="row expand">
+                        <div class="col-3">
+                            <p class="summary-title">Microservices</p>
+                        </div>
+                        <div class="col-9">
+                            <div class="row details">
+                                <a class="row" href="https://daydreamer3d.github.io/tutorials/nameko-rabbitmq/index.html">
+                                    <p class="row summary-title">Nameko and RabbitMQ</p>
+                                    <p class="row details-text">
+                                        In this series we will see how Nameko does microservices and set ups RabbitMQ for rpc and much more.
+                                    </p>
+                                    <div class="row">
+                                        <div class="tag summary-info">Python</div>
+                                        <div class="tag summary-info">Nameko</div>
+                                        <div class="tag summary-info">RabbitMQ</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="row details">
+                                <a class="row" href="https://github.com/DayDreamer3d/nameko-extension-app/">
+                                <p class="row summary-title">Nameko Extensions App</p>
+                                <p class="row details-text">
+                                    Simple app with Nameko microservices and extensions. Extensions include nameko logstash for logging, flask nameko for web framework and nameko sqlalchemy for database interactions.
+                                </p>
+                                <div class="row">
+                                    <div class="tag summary-info">Nameko</div>
+                                    <div class="tag summary-info">RabbitMQ</div>
+                                    <div class="tag summary-info">Flask</div>
+                                    <div class="tag summary-info">Sqlalchemy</div>
+                                    <div class="tag summary-info">Redis</div>
+                                    <div class="tag summary-info">Logstash</div>
+                                    <div class="tag summary-info">Python</div>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <p class="summary-title">Website</p>
+                        </div>
+                        <div class="col-9">
+                            <div class="row details">
+                                <a class="row" href="#">
+                                    <p class="row summary-title">Portfolio Website</p>
+                                    <p class="row details-text">
+                                        Created this website using basic technologies.
+                                    </p>
+                                    <div class="row">
+                                        <div class="tag summary-info">Html</div>
+                                        <div class="tag summary-info">Css</div>
+                                        <div class="tag summary-info">Javascript</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <p class="summary-title">Video Layout</p>
+                        </div>
+                        <div class="col-9">
+                            <div class="row details">
+                                <a class="row" href="http://daydreamer3d.weebly.com/movie-toolavisynth.html">
+                                    <p class="row summary-title">Video Layout Tool</p>
+                                    <p class="row details-text">
+                                        Layout various clips together which would be played simultaneously.
+                                    </p>
+                                    <div class="row">
+                                        <div class="tag summary-info">Avisynth</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <p class="summary-title">Character Setup</p>
+                        </div>
+                        <div class="col-9">
+                            <div class="row details">
+                                <a class="row" href="http://daydreamer3d.weebly.com/special-squash-page1.html">
+                                    <p class="row summary-title">Non-Linear Squash</p>
+                                    <p class="row details-text">
+                                        Mathematically driven non-linear squash tutorial.
+                                    </p>
+                                    <div class="row">
+                                        <div class="tag summary-info">Maya</div>
+                                        <div class="tag summary-info">Mel</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="level-2 card click">
+                    <h3>Accomplishments</h3>
+                    <div class="row contract">
+                        <div class="col-6">
+                            <canvas id="accom_pie" class="row">
+                            </canvas>
+                        </div>
+                        <div id="summary-text" class="col-6">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="medium">EOM</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="summary-title">MPC</p>
+                                        <p class="summary-info">Sep 2015</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="medium">MVC</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="summary-title">Xentrix</p>
+                                        <p class="summary-info">Sep 2013</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="medium">EOM</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="summary-title">Prana</p>
+                                        <p class="summary-info">Feb 2012</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row expand">
+                        <div class="col-2">
+                            <p class="details-title">MPC</p>
+                            <p class="summary-info">Sep 2015</p>
+                        </div>
+                        <div class="col-10 details">
+                            <p class="details-title">Employee Of The Month</p>
+                            <div class="row details-text">
+                                <p>For multisite, service development and PaaS support.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <p class="details-title">Xentrix</p>
+                            <p class="summary-info">Sep 2013</p>
+                        </div>
+                        <div class="col-10 details">
+                            <p class="details-title">Most Valuable Contributor</p>
+                            <div class="row details-text">
+                                <p>For contributing on development front.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <p class="details-title">Prana</p>
+                            <p class="summary-info">Feb 2012</p>
+                        </div>
+                        <div class="col-10 details">
+                            <p class="details-title">Employee Of The Month</p>
+                            <div class="row details-text">
+                                <p>For providing technical solutions and development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="level-2 card click">
+                    <h3>Recommendations</h3>
+                    <div class="row contract">
+                        <div class="col-6">
+                            <canvas id="accom_pie" class="row">
+                            </canvas>
+                        </div>
+                        <div id="summary-text" class="col-6">
+                            <div class="row">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="medium">Connon</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="summary-title">MPC</p>
+                                        <p class="summary-info">Mar 2016</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="medium">Volodymyr</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="summary-title">MPC</p>
+                                        <p class="summary-info">Aug 2017</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <p class="medium">Mayur</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p class="summary-title">Xentrix</p>
+                                        <p class="summary-info">Feb 2014</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row expand">
+                        <div class="col-3">
+                            <p class="details-title">Connon MacRae</p>
+                            <p class="summary-info">Head Of Department</p> 
+                            <p class="summary-info">Core Engineering Team</p> 
+                            <p class="summary-info">MPC</p> 
+                        </div>
+                        <div class="col-9 details">
+                            <p class="details-text">
+                                Anurag is a huge asset to the Core Engineering team at MPC. He actively takes responsibility for projects he is involved in. His commitment to getting things done and working to understand features and problems means he has a great deal of trust from his colleagues and peers.
+                                <br>
+                                <br>
+                                He also works hard at creating and maintaining great relationships across all groups. He is helpful, patient but also firm. As a result, he is highly thought of by everyone I have interactions with. 
+                                <br>
+                                <br>
+                                I thoroughly enjoy working with him and look forward to seeing how he and his career develop at MPC.
+                            </p>
+                        </div>
+                        <div class="col-3">
+                            <p class="details-title">Volodymyr Vitvitskyi</p>
+                            <p class="summary-info">Software Developer</p>
+                            <p class="summary-info">Core Engineering Team</p>
+                            <p class="summary-info">MPC</p> 
+                        </div>
+                        <div class="col-9 details">
+                            <p class="details-text">
+                                Anurag and I worked together in Core Engineering team in MPC, where we worked at two different sites. Anurag was one of those colleagues that are easy to communicate regardless of the distributed nature of the team.
+                                <br>
+                                I remember our common code reviews and it was fun as this person is keen to improve, learn new approaches, experiment and provide an honest feedback. Anurag is responsible and hard-working - the great member of a development team.
+                            </p>
+                        </div>
+                        <a class="button" href="https://www.linkedin.com/in/day-dreamer/">MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="static/js/app.js"></script>
+
+</body>
+
+</html>
