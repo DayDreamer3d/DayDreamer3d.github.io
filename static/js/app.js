@@ -82,10 +82,10 @@ function draw_summary_pies() {
 function card_expand() {
 
     $(this).children('.contract').hide();
-    $(this).children('.expand').css('display', 'flex');
+    var expand = $(this).children('.expand')[0];
+    $(expand).css('display', 'flex');
 
     var w = $('#main-container').width() - 22;
-    var expand = $(this).children('.expand')[0];
     var h = $(expand).height() + 11;  // TODO : not exact why ?
 
     $(this).animate({width: w}, 150);
